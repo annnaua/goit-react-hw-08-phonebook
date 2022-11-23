@@ -1,3 +1,5 @@
+import { toast } from 'react-hot-toast';
+
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 
@@ -18,13 +20,17 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(register.rejected, (state, action) => state)
+      .addCase(register.rejected, (state, action) =>
+        toast.error('Введите верные данные')
+      )
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logIn.rejected, (state, action) => state)
+      .addCase(logIn.rejected, (state, action) =>
+        toast.error('Введите верные данные')
+      )
       .addCase(logOut.fulfilled, (state, action) => {
         state.user = { name: null, email: null };
         state.token = null;

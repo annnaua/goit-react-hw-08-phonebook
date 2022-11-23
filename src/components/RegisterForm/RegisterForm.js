@@ -24,14 +24,15 @@ export const RegisterForm = () => {
     dispatch(
       register({ name: inputName, email: inputEmail, password: inputPassword })
     );
-    resetForm();
+
+    // resetForm();
   };
 
-  const resetForm = () => {
-    setInputName('');
-    setInputEmail('');
-    setInputPassword('');
-  };
+  // const resetForm = () => {
+  //   setInputName('');
+  //   setInputEmail('');
+  //   setInputPassword('');
+  // };
 
   const handleChange = e => {
     const { name, value } = e.target;

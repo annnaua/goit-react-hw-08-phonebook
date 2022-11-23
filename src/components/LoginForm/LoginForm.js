@@ -21,13 +21,13 @@ export const LoginForm = () => {
     e.preventDefault();
 
     dispatch(logIn({ email: inputEmail, password: inputPassword }));
-    resetForm();
+    // resetForm();
   };
 
-  const resetForm = () => {
-    setInputEmail('');
-    setInputPassword('');
-  };
+  // const resetForm = () => {
+  //   setInputEmail('');
+  //   setInputPassword('');
+  // };
 
   const handleChange = e => {
     const { name, value } = e.target;
